@@ -6,12 +6,12 @@ import { App } from "../src/App";
 test("App component displays hackathon hero", () => {
     render(<App />);
 
-    const heading = screen.getByText(/Final project template/i);
+    const heading = screen.getByText(/Neon Nexus: Build Tomorrow in 48 Hours/i);
 
     expect(heading).toBeInTheDocument();
 });
 
-test("concept generator cycles to next idea", async () => {
+test("Concept generator cycles to next idea", async () => {
     render(<App />);
 
     expect(

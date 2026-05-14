@@ -1,20 +1,17 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import "./App.css";
+
+const conceptStack = [
+    "AI Storyboarder + AR Street Art + Real-time Crowd Voting",
+    "Voice DJ + Biofeedback Lights + Multiplayer Beat Battles",
+    "Eco Quest Game + Local Recycling Rewards + Live Impact Map",
+    "Travel Buddy + Instant Translation + Offline Adventure Planner",
+];
 
 export function App() {
     const [theme, setTheme] = useState<"night" | "sunset">("night");
     const [ideaIndex, setIdeaIndex] = useState(0);
     const [wowLevel, setWowLevel] = useState(82);
-
-    const conceptStack = useMemo(
-        () => [
-            "AI Storyboarder + AR Street Art + Real-time Crowd Voting",
-            "Voice DJ + Biofeedback Lights + Multiplayer Beat Battles",
-            "Eco Quest Game + Local Recycling Rewards + Live Impact Map",
-            "Travel Buddy + Instant Translation + Offline Adventure Planner",
-        ],
-        [],
-    );
 
     return (
         <main className={`app app--${theme}`}>
@@ -77,7 +74,7 @@ export function App() {
                     </p>
                 </article>
                 <article>
-                    <h3>Final project template</h3>
+                    <h3>Launch-Ready Foundation</h3>
                     <p>
                         This project now ships with a launch-ready, hackathon-style
                         experience.
