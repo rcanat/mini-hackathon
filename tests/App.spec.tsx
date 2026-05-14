@@ -1,11 +1,32 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 import { App } from "../src/App";
 
-test("App component display header", () => {
+test("App component displays hackathon hero", () => {
     render(<App />);
 
     const heading = screen.getByText(/Final project template/i);
 
     expect(heading).toBeInTheDocument();
+});
+
+test("concept generator cycles to next idea", async () => {
+    render(<App />);
+
+    expect(
+        screen.getByText(
+            /AI Storyboarder \+ AR Street Art \+ Real-time Crowd Voting/i,
+        ),
+    ).toBeInTheDocument();
+
+    await userEvent.click(
+        screen.getByRole("button", { name: /Forge Next Idea/i }),
+    );
+
+    expect(
+        screen.getByText(
+            /Voice DJ \+ Biofeedback Lights \+ Multiplayer Beat Battles/i,
+        ),
+    ).toBeInTheDocument();
 });

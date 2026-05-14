@@ -1,42 +1,112 @@
 #root {
-  max-width: 1280px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 2.5rem 1.25rem;
+}
+
+.app {
+  max-width: 960px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  border-radius: 24px;
+  color: #eff3ff;
+  font-family:
+    Inter,
+    "Segoe UI",
+    sans-serif;
+  transition:
+    background 250ms ease,
+    box-shadow 250ms ease;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.app--night {
+  background: radial-gradient(circle at top right, #3c1f7b, #090b1f 55%);
+  box-shadow: 0 24px 60px rgb(4 7 24 / 45%);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app--sunset {
+  background: radial-gradient(circle at top right, #ff8f71, #7f1f9b 55%);
+  box-shadow: 0 24px 60px rgb(63 20 73 / 45%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.hero__badge {
+  display: inline-block;
+  margin: 0;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid rgb(255 255 255 / 25%);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.card {
-  padding: 2em;
+.hero h1 {
+  margin: 1rem 0;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.1;
 }
 
-.read-the-docs {
-  color: #888;
+.hero__subtitle {
+  margin: 0 0 1.2rem;
+  color: rgb(239 243 255 / 88%);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.button {
+  padding: 0.65rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button--primary {
+  background: linear-gradient(120deg, #7a8dff, #67e8f9);
+  color: #051031;
+}
+
+.button--ghost {
+  border-color: rgb(255 255 255 / 35%);
+  background: rgb(9 11 31 / 30%);
+  color: #f7f8ff;
+}
+
+.panel {
+  margin-top: 1.4rem;
+  padding: 1.2rem;
+  border: 1px solid rgb(255 255 255 / 13%);
+  border-radius: 16px;
+  background: rgb(9 11 31 / 35%);
+}
+
+.panel h2,
+.panel h3 {
+  margin-top: 0;
+}
+
+.panel__concept {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #bff8ff;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.panel--grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
